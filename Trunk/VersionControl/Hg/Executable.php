@@ -249,11 +249,11 @@ class VersionControl_Hg_Executable
         if ( ( empty($executables) ) || ( null === $path ) ) {
             /* iterate through the system's path to automagically find an
              * executable */
-            $paths = explode(PATH_SEPARATOR, $_SERVER['Path']);
+            $paths = explode(PATH_SEPARATOR, $_SERVER['PATH']);
 
             foreach ( $paths as $path ) {
-                if (is_executable($path . $binary)) { //DIRECTORY_SEPARATOR .
-                    $executables[] = $path . $binary;
+                if (is_executable($path . DIRECTORY_SEPARATOR . $binary)) { //DIRECTORY_SEPARATOR .
+                    $executables[] = $path . DIRECTORY_SEPARATOR . $binary;
                 }
             }
 
